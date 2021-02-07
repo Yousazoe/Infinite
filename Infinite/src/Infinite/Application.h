@@ -6,8 +6,8 @@ namespace Infinite {
 	class INFINITE_API Application
 	{
 	public:
-		Application() {}
-		virtual ~Application() {}
+		Application();
+		virtual ~Application();
 
 		void Run();
 	};
