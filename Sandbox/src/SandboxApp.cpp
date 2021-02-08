@@ -6,8 +6,6 @@ public:
 	~Sandbox() {}
 };
 
-void main() {
-	Sandbox* sandbox = new Sandbox();
-	sandbox->Run();
-	delete sandbox;
+Infinite::Application* Infinite::CreateApplication() {
+	return new Sandbox();
 }

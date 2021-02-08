@@ -24,6 +24,9 @@
     <ClInclude Include="src\Infinite.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="src\Infinite\EntryPoint.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Infinite\Application.cpp">
