@@ -1,3 +1,0 @@
-E:\Infinite Engine\Infinite\bin-int\x64-Debug\Sandbox\Sandbox.exe
-E:\Infinite Engine\Infinite\bin-int\x64-Debug\Sandbox\Sandbox.pdb
-E:\Infinite Engine\Infinite\bin\x64-Debug\Sandbox\Sandbox.pdb
