@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\Infinite\Application.cpp">
+      <Filter>Infinite</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Infinite\Log.cpp">
+      <Filter>Infinite</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Infinite\Application.h">
+      <Filter>Infinite</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Infinite\Core.h">
+      <Filter>Infinite</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Infinite\EntryPoint.h">
+      <Filter>Infinite</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Infinite\Infinite.h">
+      <Filter>Infinite</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Infinite\Log.h">
+      <Filter>Infinite</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Infinite">
+      <UniqueIdentifier>{34a54faa-8686-4908-b15d-f7c478353370}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

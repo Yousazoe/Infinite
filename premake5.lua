@@ -78,7 +78,7 @@ project "Sandbox"
   includedirs
   {
     "Infinite/vendor/spdlog/include",
-    "Infinite/src"
+    "Infinite/src/Infinite"
   }
 
   links
