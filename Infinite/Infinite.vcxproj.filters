@@ -1,14 +1,26 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="src\Infinite\Application.cpp">
-      <Filter>Infinite</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Infinite\Log.cpp">
-      <Filter>Infinite</Filter>
-    </ClCompile>
+    <Filter Include="Events">
+      <UniqueIdentifier>{3A8963B1-262B-8E87-0FE6-A1DBFB2615D8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Infinite">
+      <UniqueIdentifier>{DB7597E3-C742-F2EE-F05B-E096DC87277D}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Events\ApplicationEvent.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Events\Event.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Events\KeyEvent.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Events\MouseEvent.h">
+      <Filter>Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\Infinite\Application.h">
       <Filter>Infinite</Filter>
     </ClInclude>
@@ -26,8 +38,11 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Infinite">
-      <UniqueIdentifier>{34a54faa-8686-4908-b15d-f7c478353370}</UniqueIdentifier>
-    </Filter>
+    <ClCompile Include="src\Infinite\Application.cpp">
+      <Filter>Infinite</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Infinite\Log.cpp">
+      <Filter>Infinite</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
