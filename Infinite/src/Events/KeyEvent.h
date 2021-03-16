@@ -4,7 +4,7 @@
 
 #include <sstream>
 
-namespace Hazel {
+namespace Infinite {
 
 	class INFINITE_API KeyEvent : public Event
 	{
