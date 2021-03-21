@@ -1,9 +1,7 @@
 #pragma once
 
+#include "ifnpch.h"
 #include "Infinite/Core.h"
-
-#include <string>
-#include <functional>
 
 namespace Infinite {
 

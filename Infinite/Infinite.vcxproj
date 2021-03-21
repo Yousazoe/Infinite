@@ -76,7 +76,8 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>ifnpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>IFN_PLATFORM_WINDOWS;IFN_BUILD_DLL;IFN_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -91,12 +92,13 @@
       <ImportLibrary>..\bin\Debug-windows-x86_64\Infinite\Infinite.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Debug-windows-x86_64\Infinite\Infinite.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\Infinite\Infinite.dll ..\bin\Debug-windows-x86_64\Sandbox) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\Infinite\Infinite.dll ..\bin\Debug-windows-x86_64\Sandbox)</Command>
+      <Command>IF EXIST ..\bin\Debug-windows-x86_64\Infinite\Infinite.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\Infinite\Infinite.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\Infinite\Infinite.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>ifnpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>IFN_PLATFORM_WINDOWS;IFN_BUILD_DLL;IFN_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -120,7 +122,8 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
     <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>ifnpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>IFN_PLATFORM_WINDOWS;IFN_BUILD_DLL;IFN_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -152,10 +155,14 @@
     <ClInclude Include="src\Infinite\EntryPoint.h" />
     <ClInclude Include="src\Infinite\Infinite.h" />
     <ClInclude Include="src\Infinite\Log.h" />
+    <ClInclude Include="src\ifnpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Infinite\Application.cpp" />
     <ClCompile Include="src\Infinite\Log.cpp" />
+    <ClCompile Include="src\ifnpch.cpp">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

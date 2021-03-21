@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Infinite {
 
 	class INFINITE_API MouseMovedEvent : public Event
