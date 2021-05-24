@@ -1,25 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Events">
-      <UniqueIdentifier>{3A8963B1-262B-8E87-0FE6-A1DBFB2615D8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Infinite">
       <UniqueIdentifier>{DB7597E3-C742-F2EE-F05B-E096DC87277D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Infinite\Events">
+      <UniqueIdentifier>{3A8963B1-262B-8E87-0FE6-A1DBFB2615D8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Events\ApplicationEvent.h">
-      <Filter>Events</Filter>
+      <Filter>Infinite\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Events\Event.h">
-      <Filter>Events</Filter>
+      <Filter>Infinite\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Events\KeyEvent.h">
-      <Filter>Events</Filter>
+      <Filter>Infinite\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Events\MouseEvent.h">
-      <Filter>Events</Filter>
+      <Filter>Infinite\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Infinite\Application.h">
       <Filter>Infinite</Filter>
@@ -36,6 +42,10 @@
     <ClInclude Include="src\Infinite\Log.h">
       <Filter>Infinite</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Window.h" />
     <ClInclude Include="src\ifnpch.h" />
   </ItemGroup>
   <ItemGroup>
@@ -44,6 +54,9 @@
     </ClCompile>
     <ClCompile Include="src\Infinite\Log.cpp">
       <Filter>Infinite</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\ifnpch.cpp" />
   </ItemGroup>

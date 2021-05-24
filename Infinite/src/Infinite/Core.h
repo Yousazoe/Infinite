@@ -10,4 +10,12 @@
 	#error Infinite only support Windows
 #endif
 
+#ifdef IFN_ENABLE_ASSERTS
+    #define IFN_ASSERT(x, ...) { if(!(x)) { IFN_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+    #define IFN_CORE_ASSERT(x, ...) { if(!(x)) { IFN_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+#else
+    #define IFN_ASSERT(x, ...)
+    #define IFN_CORE_ASSERT(x, ...)
+#endif
+
 #define BIT(x) (1 << (x))

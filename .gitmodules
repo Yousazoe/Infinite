@@ -1,3 +1,6 @@
 [submodule "Infinite/vendor/spdlog"]
 	path = Infinite/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "Infinite/vendor/GLEW"]
+	path = Infinite/vendor/GLEW
+	url = https://github.com/TheCherno/glfw
