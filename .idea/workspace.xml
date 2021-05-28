@@ -6,11 +6,22 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b78b5c6-2c50-4ac8-8dae-f4ed1c674a69" name="Default Changelist" comment="" />
+    <list default="true" id="4b78b5c6-2c50-4ac8-8dae-f4ed1c674a69" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infinite/Infinite.vcxproj.user" beforeDir="false" afterPath="$PROJECT_DIR$/Infinite/Infinite.vcxproj.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infinite/src/Infinite/Application.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Infinite/src/Infinite/Application.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infinite/src/Infinite/Application.h" beforeDir="false" afterPath="$PROJECT_DIR$/Infinite/src/Infinite/Application.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infinite/src/Platform/Windows/WindowsWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Infinite/src/Platform/Windows/WindowsWindow.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infinite/src/Window.h" beforeDir="false" afterPath="$PROJECT_DIR$/Infinite/src/Window.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enc_temp_folder/0a17c6f756b922fb0c9cca9361cc6a/Window.h" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -26,8 +37,12 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="cidr.known.project.marker" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -40,6 +55,8 @@
       <workItem from="1615910353924" duration="484000" />
       <workItem from="1616843833946" duration="242000" />
       <workItem from="1616899545629" duration="156000" />
+      <workItem from="1622121109874" duration="1088000" />
+      <workItem from="1622126535119" duration="7209000" />
     </task>
     <servers />
   </component>
