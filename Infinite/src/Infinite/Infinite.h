@@ -3,6 +3,7 @@
 //For use by Infinite Applications
 
 #include "Application.h"
+#include "Layer.h"
 #include "Log.h"
 #include "Core.h"
 

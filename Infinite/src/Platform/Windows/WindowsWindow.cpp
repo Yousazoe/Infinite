@@ -1,9 +1,9 @@
 #include "ifnpch.h"
 #include "WindowsWindow.h"
 
-#include "Events/ApplicationEvent.h"
-#include "Events/MouseEvent.h"
-#include "Events/KeyEvent.h"
+#include "Infinite/Events/ApplicationEvent.h"
+#include "Infinite/Events/MouseEvent.h"
+#include "Infinite/Events/KeyEvent.h"
 
 namespace Infinite {
 

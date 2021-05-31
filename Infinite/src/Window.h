@@ -3,7 +3,7 @@
 #include "ifnpch.h"
 
 #include "Infinite/Core.h"
-#include "Events/Event.h"
+#include "Infinite/Events/Event.h"
 
 namespace Infinite {
 

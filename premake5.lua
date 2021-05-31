@@ -65,14 +65,17 @@ project "Infinite"
 
   filter "configurations:Debug"
       defines "IFN_DEBUG"
+      buildoptions "/MDd"
       symbols "On"
 
   filter "configurations:Release"
       defines "IFN_RELEASE"
+      buildoptions "/MD"
       optimize "On"
 
   filter "configurations:Dist"
       defines "IFN_DIST"
+      buildoptions "/MD"
       optimize "On"
 
 
@@ -116,12 +119,15 @@ project "Sandbox"
 
   filter "configurations:Debug"
       defines "IFN_DEBUG"
+      buildoptions "/MDd"
       symbols "On"
 
   filter "configurations:Release"
       defines "IFN_RELEASE"
+      buildoptions "/MD"
       optimize "On"
 
   filter "configurations:Dist"
       defines "IFN_DIST"
+      buildoptions "/MD"
       optimize "On"
