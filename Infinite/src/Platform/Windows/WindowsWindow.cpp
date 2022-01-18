@@ -5,6 +5,8 @@
 #include "Infinite/Events/MouseEvent.h"
 #include "Infinite/Events/KeyEvent.h"
 
+#include <GLAD/glad.h>
+
 namespace Infinite {
 
 	static bool s_GLFWInitialized = false;
@@ -47,6 +49,8 @@ namespace Infinite {
 
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		IFN_CORE_ASSERT(status, "Failed to initialize GLAD!");
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 

@@ -14,8 +14,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "Infinite/vendor/GLFW/include"
+IncludeDir["GLAD"] = "Infinite/vendor/GLAD/include"
 
 include "Infinite/vendor/GLFW"
+include "Infinite/vendor/GLAD"
 
 project "Infinite"
   location "Infinite"
@@ -38,12 +40,14 @@ project "Infinite"
   {
     "%{prj.name}/src",
     "%{prj.name}/vendor/spdlog/include",
-    "%{IncludeDir.GLFW}"
+    "%{IncludeDir.GLFW}",
+    "%{IncludeDir.GLAD}"
   }
 
   links
   {
     "GLFW",
+    "GLAD",
     "opengl32.lib"
   }
 
@@ -55,7 +59,8 @@ project "Infinite"
     defines
     {
       "IFN_PLATFORM_WINDOWS",
-      "IFN_BUILD_DLL"
+      "IFN_BUILD_DLL",
+      "GLFW_INCLUDE_NONE"
     }
 
     postbuildcommands
@@ -99,7 +104,9 @@ project "Sandbox"
   {
     "Infinite/vendor/spdlog/include",
     "Infinite/src/Infinite",
-    "Infinite/src/Events"
+    "Infinite/src/Events",
+    "Infinite/src/**.h",
+    "Infinite/src/**.cpp"
   }
 
   links
