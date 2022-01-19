@@ -15,11 +15,9 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "Infinite/vendor/GLFW/include"
 IncludeDir["GLAD"] = "Infinite/vendor/GLAD/include"
-IncludeDir["ImGui"] = "Infinite/vendor/imgui/include"
 
 include "Infinite/vendor/GLFW"
 include "Infinite/vendor/GLAD"
-include "Infinite/vendor/imgui"
 
 project "Infinite"
   location "Infinite"
@@ -43,15 +41,13 @@ project "Infinite"
     "%{prj.name}/src",
     "%{prj.name}/vendor/spdlog/include",
     "%{IncludeDir.GLFW}",
-    "%{IncludeDir.GLAD}",
-    "%{IncludeDir.ImGui}"
+    "%{IncludeDir.GLAD}"
   }
 
   links
   {
     "GLFW",
     "GLAD",
-    "ImGui",
     "opengl32.lib"
   }
 

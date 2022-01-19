@@ -9,8 +9,6 @@
 
 #include <stdio.h>
 
-#include "ImGui/ImGuiLayer.h"
-
 //--------------------- Entry Point ---------------------//
 #include "EntryPoint.h"
 //-------------------------------------------------------//
