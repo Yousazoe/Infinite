@@ -18,6 +18,10 @@
     #define IFN_CORE_ASSERT(x, ...)
 #endif
 
+#ifdef IFN_DEBUG
+	#define IFN_ENABLE_ASSERTS
+#endif
+
 #define BIT(x) (1 << (x))
 
 #define IFN_BIND_EVENT_FN(fn) std::bind(&fn, this, std::placeholders::_1)

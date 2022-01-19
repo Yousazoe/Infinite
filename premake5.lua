@@ -25,6 +25,7 @@ project "Infinite"
   location "Infinite"
   kind "SharedLib"
   language "C++"
+  staticruntime "off"
 
   targetdir ("bin/" .. outputdir .. "/%{prj.name}")
   objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -57,7 +58,6 @@ project "Infinite"
 
   filter "system:windows"
     cppdialect "C++17"
-    staticruntime "On"
     systemversion "latest"
 
     defines
@@ -69,22 +69,22 @@ project "Infinite"
 
     postbuildcommands
     {
-      ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+      ("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
     }
 
   filter "configurations:Debug"
       defines "IFN_DEBUG"
-      buildoptions "/MDd"
+      runtime "Debug"
       symbols "On"
 
   filter "configurations:Release"
       defines "IFN_RELEASE"
-      buildoptions "/MD"
+      runtime "Release"
       optimize "On"
 
   filter "configurations:Dist"
       defines "IFN_DIST"
-      buildoptions "/MD"
+      runtime "Release"
       optimize "On"
 
 
@@ -92,6 +92,7 @@ project "Infinite"
 project "Sandbox"
   location "Sandbox"
   kind "ConsoleApp"
+  staticruntime "off"
 
   language "C++"
 
@@ -120,7 +121,6 @@ project "Sandbox"
 
   filter "system:windows"
     cppdialect "C++17"
-    staticruntime "On"
     systemversion "latest"
 
     defines
@@ -130,15 +130,15 @@ project "Sandbox"
 
   filter "configurations:Debug"
       defines "IFN_DEBUG"
-      buildoptions "/MDd"
+      runtime "Debug"
       symbols "On"
 
   filter "configurations:Release"
       defines "IFN_RELEASE"
-      buildoptions "/MD"
+      runtime "Release"
       optimize "On"
 
   filter "configurations:Dist"
       defines "IFN_DIST"
-      buildoptions "/MD"
+      runtime "Release"
       optimize "On"
