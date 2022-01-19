@@ -4,3 +4,6 @@
 [submodule "Infinite/vendor/GLEW"]
 	path = Infinite/vendor/GLEW
 	url = https://github.com/TheCherno/glfw
+[submodule "Infinite/vendor/imgui"]
+	path = Infinite/vendor/imgui
+	url = https://github.com/TheCherno/imgui
