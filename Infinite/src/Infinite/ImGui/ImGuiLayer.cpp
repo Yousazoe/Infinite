@@ -91,7 +91,7 @@ namespace Infinite {
 		dispatcher.Dispatch<MouseMovedEvent>(IFN_BIND_EVENT_FN(ImGuiLayer::OnMouseMovedEvent));
 		dispatcher.Dispatch<MouseScrolledEvent>(IFN_BIND_EVENT_FN(ImGuiLayer::OnMouseScrolledEvent));
 		dispatcher.Dispatch<KeyPressedEvent>(IFN_BIND_EVENT_FN(ImGuiLayer::OnKeyPressedEvent));
-		//dispatcher.Dispatch<KeyTypedEvent>(HZ_BIND_EVENT_FN(ImGuiLayer::OnKeyTypedEvent));
+		dispatcher.Dispatch<KeyTypedEvent>(IFN_BIND_EVENT_FN(ImGuiLayer::OnKeyTypedEvent));
 		dispatcher.Dispatch<KeyReleasedEvent>(IFN_BIND_EVENT_FN(ImGuiLayer::OnKeyReleasedEvent));
 		dispatcher.Dispatch<WindowResizeEvent>(IFN_BIND_EVENT_FN(ImGuiLayer::OnWindowResizeEvent));
 	}
