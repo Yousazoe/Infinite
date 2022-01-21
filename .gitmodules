@@ -7,3 +7,6 @@
 [submodule "Infinite/vendor/imgui"]
 	path = Infinite/vendor/imgui
 	url = https://github.com/TheCherno/imgui
+[submodule "Infinite/vendor/glm"]
+	path = Infinite/vendor/glm
+	url = https://github.com/g-truc/glm

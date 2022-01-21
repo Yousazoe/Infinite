@@ -6,7 +6,7 @@ public:
 	ExampleLayer()
 		: Layer("Example")
 	{
-
+		
 	}
 
 	void OnUpdate() override
@@ -26,7 +26,7 @@ public:
 					IFN_INFO("Tab key is pressed (event)!");
 
 				IFN_TRACE("{0}", (char)e.GetKeyCode());
-			}
+			} 
 	}
 
 };
