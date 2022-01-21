@@ -7,6 +7,10 @@
 #include "Log.h"
 #include "Core.h"
 
+#include "Input.h"
+#include "KeyCodes.h"
+#include "MouseButtonCodes.h"
+
 #include <stdio.h>
 
 #include "ImGui/ImGuiLayer.h"

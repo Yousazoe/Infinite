@@ -159,9 +159,11 @@
     <ClInclude Include="src\Infinite\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Infinite\Infinite.h" />
     <ClInclude Include="src\Infinite\Input.h" />
+    <ClInclude Include="src\Infinite\KeyCodes.h" />
     <ClInclude Include="src\Infinite\Layer.h" />
     <ClInclude Include="src\Infinite\LayerStack.h" />
     <ClInclude Include="src\Infinite\Log.h" />
+    <ClInclude Include="src\Infinite\MouseButtonCodes.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />

@@ -67,6 +67,8 @@
     <ClInclude Include="src\ifnpch.h" />
     <ClInclude Include="src\Infinite\Input.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
+    <ClInclude Include="src\Infinite\KeyCodes.h" />
+    <ClInclude Include="src\Infinite\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Infinite\Application.cpp">

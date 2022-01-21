@@ -11,12 +11,22 @@ public:
 
 	void OnUpdate() override
 	{
-		IFN_INFO("ExampleLayer::Update");
+		// IFN_INFO("ExampleLayer::Update");
+
+		if (Infinite::Input::IsKeyPressed(IFN_KEY_TAB))
+			IFN_INFO("Tab key is pressed (poll)!");
 	}
 
 	void OnEvent(Infinite::Event& event) override
 	{
-		IFN_TRACE("{0}",event);
+			if (event.GetEventType() == Infinite::EventType::KeyPressed)
+			{
+				Infinite::KeyPressedEvent& e = (Infinite::KeyPressedEvent&)event;
+				if (Infinite::Input::IsKeyPressed(IFN_KEY_TAB))
+					IFN_INFO("Tab key is pressed (event)!");
+
+				IFN_TRACE("{0}", (char)e.GetKeyCode());
+			}
 	}
 
 };
