@@ -15,7 +15,7 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "Infinite/vendor/GLFW/include"
 IncludeDir["GLAD"] = "Infinite/vendor/GLAD/include"
-IncludeDir["ImGui"] = "Infinite/vendor/imgui/include"
+IncludeDir["imgui"] = "Infinite/vendor/imgui/include"
 IncludeDir["glm"] = "Infinite/vendor/glm"
 
 include "Infinite/vendor/GLFW"
@@ -39,7 +39,7 @@ project "Infinite"
     "%{prj.name}/src/**.h",
     "%{prj.name}/src/**.cpp",
     "%{prj.name}/vendor/glm/glm/**.hpp",
-    "%{prj.name}/vendor/glm/glm/**.inl",
+    "%{prj.name}/vendor/glm/glm/**.inl"
   }
 
   includedirs
@@ -48,7 +48,7 @@ project "Infinite"
     "%{prj.name}/vendor/spdlog/include",
     "%{IncludeDir.GLFW}",
     "%{IncludeDir.GLAD}",
-    "%{IncludeDir.ImGui}",
+    "%{IncludeDir.imgui}",
     "%{IncludeDir.glm}"
   }
 
@@ -56,7 +56,7 @@ project "Infinite"
   {
     "GLFW",
     "GLAD",
-    "ImGui",
+    "imgui",
     "opengl32.lib"
   }
 
@@ -116,6 +116,7 @@ project "Sandbox"
     "Infinite/src/Events",
     "Infinite/src/**.h",
     "Infinite/src/**.cpp",
+    "Infinite/vendor/imgui",
     "%{IncludeDir.glm}"
   }
 

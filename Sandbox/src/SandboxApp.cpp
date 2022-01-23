@@ -1,5 +1,7 @@
 #include <Infinite.h>
 
+#include "../imgui/imgui.h"
+
 class ExampleLayer : public Infinite::Layer
 {
 public:
@@ -16,6 +18,16 @@ public:
 		if (Infinite::Input::IsKeyPressed(IFN_KEY_TAB))
 			IFN_INFO("Tab key is pressed (poll)!");
 	}
+
+
+/*
+	virtual void OnImGuiRender() override
+	{
+		ImGui::Begin("Test");
+		ImGui::Text("Hello World");
+		ImGui::End();
+	}
+*/
 
 	void OnEvent(Infinite::Event& event) override
 	{
@@ -36,7 +48,6 @@ public:
 	Sandbox() 
 	{
 		PushLayer(new ExampleLayer());
-		PushOverlay(new Infinite::ImGuiLayer());
 	}
 	~Sandbox() {}
 };
