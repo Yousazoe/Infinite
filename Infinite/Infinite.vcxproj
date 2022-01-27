@@ -155,6 +155,8 @@
     <ClInclude Include="src\Infinite\LayerStack.h" />
     <ClInclude Include="src\Infinite\Log.h" />
     <ClInclude Include="src\Infinite\MouseButtonCodes.h" />
+    <ClInclude Include="src\Infinite\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Window.h" />
@@ -582,6 +584,7 @@
     <ClCompile Include="src\Infinite\Layer.cpp" />
     <ClCompile Include="src\Infinite\LayerStack.cpp" />
     <ClCompile Include="src\Infinite\Log.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\ifnpch.cpp">

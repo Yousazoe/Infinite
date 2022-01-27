@@ -4,6 +4,8 @@
 
 #include <GLFW/glfw3.h>
 
+#include "Infinite/Renderer/GraphicsContext.h"
+
 
 namespace Infinite {
 	
@@ -29,6 +31,7 @@ namespace Infinite {
 		virtual void Shutdown();
 	private:
 		GLFWwindow* m_Window;
+		GraphicsContext* m_Context;
 
 		struct WindowData
 		{
