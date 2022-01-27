@@ -1,11 +1,15 @@
 #pragma once
 
 #ifdef IFN_PLATFORM_WINDOWS
+#if IFN_DYNAMIC_LINK
 	#ifdef IFN_BUILD_DLL
 		#define INFINITE_API _declspec(dllexport)
 	#else
 		#define INFINITE_API _declspec(dllimport)
 	#endif
+#else
+    #define INFINITE_API
+#endif
 #else
 	#error Infinite only support Windows
 #endif

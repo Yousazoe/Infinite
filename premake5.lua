@@ -15,7 +15,7 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "Infinite/vendor/GLFW/include"
 IncludeDir["GLAD"] = "Infinite/vendor/GLAD/include"
-IncludeDir["imgui"] = "Infinite/vendor/imgui/include"
+IncludeDir["ImGui"] = "Infinite/vendor/imgui"
 IncludeDir["glm"] = "Infinite/vendor/glm"
 
 include "Infinite/vendor/GLFW"
@@ -24,9 +24,10 @@ include "Infinite/vendor/imgui"
 
 project "Infinite"
   location "Infinite"
-  kind "SharedLib"
+  kind "StaticLib"
   language "C++"
-  staticruntime "off"
+  staticruntime "on"
+  cppdialect "C++17"
 
   targetdir ("bin/" .. outputdir .. "/%{prj.name}")
   objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -42,13 +43,19 @@ project "Infinite"
     "%{prj.name}/vendor/glm/glm/**.inl"
   }
 
+  defines
+	{
+		"_CRT_SECURE_NO_WARNINGS"
+	}
+
+
   includedirs
   {
     "%{prj.name}/src",
     "%{prj.name}/vendor/spdlog/include",
     "%{IncludeDir.GLFW}",
     "%{IncludeDir.GLAD}",
-    "%{IncludeDir.imgui}",
+    "%{IncludeDir.ImGui}",
     "%{IncludeDir.glm}"
   }
 
@@ -56,12 +63,11 @@ project "Infinite"
   {
     "GLFW",
     "GLAD",
-    "imgui",
+    "ImGui",
     "opengl32.lib"
   }
 
   filter "system:windows"
-    cppdialect "C++17"
     systemversion "latest"
 
     defines
@@ -71,34 +77,31 @@ project "Infinite"
       "GLFW_INCLUDE_NONE"
     }
 
-    postbuildcommands
-    {
-      ("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
-    }
-
   filter "configurations:Debug"
       defines "IFN_DEBUG"
       runtime "Debug"
-      symbols "On"
+      symbols "on"
 
   filter "configurations:Release"
       defines "IFN_RELEASE"
       runtime "Release"
-      optimize "On"
+      optimize "on"
 
   filter "configurations:Dist"
       defines "IFN_DIST"
       runtime "Release"
-      optimize "On"
+      optimize "on"
 
 
 
 project "Sandbox"
   location "Sandbox"
   kind "ConsoleApp"
-  staticruntime "off"
-
   language "C++"
+  cppdialect "C++17"
+  staticruntime "on"
+
+
 
   targetdir ("bin/" .. outputdir .. "/%{prj.name}")
   objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -126,7 +129,6 @@ project "Sandbox"
   }
 
   filter "system:windows"
-    cppdialect "C++17"
     systemversion "latest"
 
     defines
@@ -137,14 +139,14 @@ project "Sandbox"
   filter "configurations:Debug"
       defines "IFN_DEBUG"
       runtime "Debug"
-      symbols "On"
+      symbols "on"
 
   filter "configurations:Release"
       defines "IFN_RELEASE"
       runtime "Release"
-      optimize "On"
+      optimize "on"
 
   filter "configurations:Dist"
       defines "IFN_DIST"
       runtime "Release"
-      optimize "On"
+      optimize "on"
