@@ -19,6 +19,12 @@ namespace Infinite {
 		glfwMakeContextCurrent(m_WindowHandle);
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		IFN_CORE_ASSERT(status, "Failed to initialize Glad!");
+
+
+		IFN_CORE_INFO("OpenGL Info:");
+		IFN_CORE_INFO("  Vendor: {0}", glGetString(GL_VENDOR));
+		IFN_CORE_INFO("  Renderer: {0}", glGetString(GL_RENDERER));
+		IFN_CORE_INFO("  Version: {0}", glGetString(GL_VERSION));
 	}
 
 	void OpenGLContext::SwapBuffers()
