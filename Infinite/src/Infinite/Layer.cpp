@@ -8,9 +8,4 @@ namespace Infinite {
 	{
 
 	}
-
-	Layer::~Layer()
-	{
-
-	}
 }
