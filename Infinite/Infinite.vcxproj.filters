@@ -13,8 +13,14 @@
     <Filter Include="src\Infinite\ImGui">
       <UniqueIdentifier>{7CC39901-68A7-5A57-D107-55AABD0A45D9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Infinite\Renderer">
+      <UniqueIdentifier>{B8C86EF2-2435-2AED-ED28-C24A59544C55}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Platform">
       <UniqueIdentifier>{21CA02E5-0D2D-9289-B6B2-CA3FA2F45D0C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Platform\OpenGL">
+      <UniqueIdentifier>{35A49437-A105-7245-2A73-B8F796D3A804}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\Platform\Windows">
       <UniqueIdentifier>{5B054582-4794-CE4B-F0B2-E246DC20DFF1}</UniqueIdentifier>
@@ -86,6 +92,15 @@
     </ClInclude>
     <ClInclude Include="src\Infinite\MouseButtonCodes.h">
       <Filter>src\Infinite</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Infinite\Renderer\GraphicsContext.h">
+      <Filter>src\Infinite\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Infinite\Renderer\Shader.h">
+      <Filter>src\Infinite\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h">
+      <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsInput.h">
       <Filter>src\Platform\Windows</Filter>
@@ -1344,8 +1359,6 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp">
       <Filter>vendor\glm\glm</Filter>
     </ClInclude>
-    <ClInclude Include="src\Infinite\Renderer\GraphicsContext.h" />
-    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Infinite\Application.cpp">
@@ -1366,6 +1379,12 @@
     <ClCompile Include="src\Infinite\Log.cpp">
       <Filter>src\Infinite</Filter>
     </ClCompile>
+    <ClCompile Include="src\Infinite\Renderer\Shader.cpp">
+      <Filter>src\Infinite\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
       <Filter>src\Platform\Windows</Filter>
     </ClCompile>
@@ -1375,6 +1394,5 @@
     <ClCompile Include="src\ifnpch.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
   </ItemGroup>
 </Project>

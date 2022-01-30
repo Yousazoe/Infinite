@@ -156,6 +156,7 @@
     <ClInclude Include="src\Infinite\Log.h" />
     <ClInclude Include="src\Infinite\MouseButtonCodes.h" />
     <ClInclude Include="src\Infinite\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\Infinite\Renderer\Shader.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
@@ -584,6 +585,7 @@
     <ClCompile Include="src\Infinite\Layer.cpp" />
     <ClCompile Include="src\Infinite\LayerStack.cpp" />
     <ClCompile Include="src\Infinite\Log.cpp" />
+    <ClCompile Include="src\Infinite\Renderer\Shader.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
@@ -595,7 +597,7 @@
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">
       <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
     </ProjectReference>
-    <ProjectReference Include="vendor\GLAD\GLAD.vcxproj">
+    <ProjectReference Include="vendor\Glad\GLAD.vcxproj">
       <Project>{5D4A857C-4981-860D-F26D-6C10DE83020F}</Project>
     </ProjectReference>
     <ProjectReference Include="vendor\imgui\ImGui.vcxproj">

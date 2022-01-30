@@ -18,9 +18,12 @@ IncludeDir["GLAD"] = "Infinite/vendor/GLAD/include"
 IncludeDir["ImGui"] = "Infinite/vendor/imgui"
 IncludeDir["glm"] = "Infinite/vendor/glm"
 
-include "Infinite/vendor/GLFW"
-include "Infinite/vendor/GLAD"
-include "Infinite/vendor/imgui"
+group "Dependencies"
+	include "Infinite/vendor/GLFW"
+	include "Infinite/vendor/Glad"
+	include "Infinite/vendor/imgui"
+
+group ""
 
 project "Infinite"
   location "Infinite"
