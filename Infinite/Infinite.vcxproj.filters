@@ -1362,6 +1362,8 @@
     <ClInclude Include="src\Infinite\Renderer\Buffer.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="src\Infinite\Renderer\Renderer.h" />
+    <ClInclude Include="src\Infinite\Renderer\VertexArray.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Infinite\Application.cpp">
@@ -1400,5 +1402,7 @@
     <ClCompile Include="src\Infinite\Renderer\Buffer.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="src\Infinite\Renderer\Renderer.cpp" />
+    <ClCompile Include="src\Infinite\Renderer\VertexArraycpp.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp" />
   </ItemGroup>
 </Project>
