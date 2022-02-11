@@ -157,6 +157,7 @@
     <ClInclude Include="src\Infinite\MouseButtonCodes.h" />
     <ClInclude Include="src\Infinite\Renderer\Buffer.h" />
     <ClInclude Include="src\Infinite\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\Infinite\Renderer\OrthographicCamera.h" />
     <ClInclude Include="src\Infinite\Renderer\RenderCommand.h" />
     <ClInclude Include="src\Infinite\Renderer\Renderer.h" />
     <ClInclude Include="src\Infinite\Renderer\RendererAPI.h" />
@@ -594,6 +595,7 @@
     <ClCompile Include="src\Infinite\LayerStack.cpp" />
     <ClCompile Include="src\Infinite\Log.cpp" />
     <ClCompile Include="src\Infinite\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\Infinite\Renderer\OrthographicCamera.cpp" />
     <ClCompile Include="src\Infinite\Renderer\RenderCommand.cpp" />
     <ClCompile Include="src\Infinite\Renderer\Renderer.cpp" />
     <ClCompile Include="src\Infinite\Renderer\RendererAPI.cpp" />
