@@ -6,16 +6,10 @@
 #include "Events/Event.h"
 #include "Events/ApplicationEvent.h"
 
-#include "./ImGui/ImGuiLayer.h"
-
-#include "./Renderer/Shader.h"
-#include "./Renderer/Buffer.h"
-#include "./Renderer/VertexArray.h"
-
-#include "./Renderer/OrthographicCamera.h"
+#include "ImGui/ImGuiLayer.h"
 
 namespace Infinite {
-	class INFINITE_API Application
+	class Application
 	{
 	public:
 		Application();
@@ -36,15 +30,7 @@ namespace Infinite {
 		std::unique_ptr<Window> m_Window;
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
-		LayerStack m_LayerStack;
-
-		std::shared_ptr<Shader> m_Shader;
-		std::shared_ptr<VertexArray> m_VertexArray;
-
-		std::shared_ptr<Shader> m_BlueShader;
-		std::shared_ptr<VertexArray> m_SquareVertexArray;
-
-		OrthographicCamera m_Camera;
+		LayerStack m_LayerStack; 
 	private:
 		static Application* s_Instance;
 	};
