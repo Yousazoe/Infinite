@@ -7,6 +7,8 @@
 #include "Log.h"
 #include "Core.h"
 
+#include "Core/Timestep.h"
+
 #include "Input.h"
 #include "KeyCodes.h"
 #include "MouseButtonCodes.h"

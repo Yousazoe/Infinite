@@ -123,22 +123,24 @@ public:
 
 	}
 
-	void OnUpdate() override
+	void OnUpdate(Infinite::Timestep ts) override
 	{
+		IFN_TRACE("Delta time: {0}s ({1}ms)", ts.GetSeconds(), ts.GetMilliseconds());
+
 		if (Infinite::Input::IsKeyPressed(IFN_KEY_LEFT))
-			m_CameraPosition.x -= m_CameraMoveSpeed;
+			m_CameraPosition.x -= m_CameraMoveSpeed * ts;
 		else if (Infinite::Input::IsKeyPressed(IFN_KEY_RIGHT))
-			m_CameraPosition.x += m_CameraMoveSpeed;
+			m_CameraPosition.x += m_CameraMoveSpeed * ts;
 		
 		if (Infinite::Input::IsKeyPressed(IFN_KEY_DOWN))
-			m_CameraPosition.y -= m_CameraMoveSpeed;
+			m_CameraPosition.y -= m_CameraMoveSpeed * ts;
 		else if (Infinite::Input::IsKeyPressed(IFN_KEY_UP))
-			m_CameraPosition.y += m_CameraMoveSpeed;
+			m_CameraPosition.y += m_CameraMoveSpeed * ts;
 		
 		if (Infinite::Input::IsKeyPressed(IFN_KEY_A))
-			m_CameraRotation += m_CameraRotationSpeed;
+			m_CameraRotation += m_CameraRotationSpeed * ts;
 		else if (Infinite::Input::IsKeyPressed(IFN_KEY_D))
-			m_CameraRotation -= m_CameraRotationSpeed;
+			m_CameraRotation -= m_CameraRotationSpeed * ts;
 
 
 		Infinite::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
@@ -180,8 +182,8 @@ private:
 	Infinite::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition;
 	float m_CameraRotation = 0.0f;
-	float m_CameraMoveSpeed = 0.1f;
-	float m_CameraRotationSpeed = 0.1f;
+	float m_CameraMoveSpeed = 5.0f;
+	float m_CameraRotationSpeed = 180.0f;
 };
 
 class Sandbox : public Infinite::Application {

@@ -142,6 +142,7 @@
   <ItemGroup>
     <ClInclude Include="src\Infinite\Application.h" />
     <ClInclude Include="src\Infinite\Core.h" />
+    <ClInclude Include="src\Infinite\Core\Timestep.h" />
     <ClInclude Include="src\Infinite\EntryPoint.h" />
     <ClInclude Include="src\Infinite\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Infinite\Events\Event.h" />
