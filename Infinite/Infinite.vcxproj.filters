@@ -7,6 +7,9 @@
     <Filter Include="src\Infinite">
       <UniqueIdentifier>{D2781114-BEDB-A0B8-6761-D96E53A36C3B}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Infinite\Core">
+      <UniqueIdentifier>{6AF0101F-D606-0FB5-1F7E-9AD68BD3DF3C}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Infinite\Events">
       <UniqueIdentifier>{76C4302C-E225-0E3A-6B93-54ECD7F344F9}</UniqueIdentifier>
     </Filter>
@@ -54,6 +57,9 @@
     <ClInclude Include="src\Infinite\Core.h">
       <Filter>src\Infinite</Filter>
     </ClInclude>
+    <ClInclude Include="src\Infinite\Core\Timestep.h">
+      <Filter>src\Infinite\Core</Filter>
+    </ClInclude>
     <ClInclude Include="src\Infinite\EntryPoint.h">
       <Filter>src\Infinite</Filter>
     </ClInclude>
@@ -93,13 +99,43 @@
     <ClInclude Include="src\Infinite\MouseButtonCodes.h">
       <Filter>src\Infinite</Filter>
     </ClInclude>
+    <ClInclude Include="src\Infinite\Renderer\Buffer.h">
+      <Filter>src\Infinite\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\Infinite\Renderer\GraphicsContext.h">
+      <Filter>src\Infinite\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Infinite\Renderer\OrthographicCamera.h">
+      <Filter>src\Infinite\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Infinite\Renderer\RenderCommand.h">
+      <Filter>src\Infinite\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Infinite\Renderer\Renderer.h">
+      <Filter>src\Infinite\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Infinite\Renderer\RendererAPI.h">
       <Filter>src\Infinite\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Infinite\Renderer\Shader.h">
       <Filter>src\Infinite\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\Infinite\Renderer\VertexArray.h">
+      <Filter>src\Infinite\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h">
       <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsInput.h">
@@ -1359,16 +1395,6 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp">
       <Filter>vendor\glm\glm</Filter>
     </ClInclude>
-    <ClInclude Include="src\Infinite\Renderer\Buffer.h" />
-    <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
-    <ClInclude Include="src\Infinite\Renderer\Renderer.h" />
-    <ClInclude Include="src\Infinite\Renderer\VertexArray.h" />
-    <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h" />
-    <ClInclude Include="src\Infinite\Renderer\RendererAPI.h" />
-    <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
-    <ClInclude Include="src\Infinite\Renderer\RenderCommand.h" />
-    <ClInclude Include="src\Infinite\Renderer\OrthographicCamera.h" />
-    <ClInclude Include="src\Infinite\Core\Timestep.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Infinite\Application.cpp">
@@ -1389,10 +1415,40 @@
     <ClCompile Include="src\Infinite\Log.cpp">
       <Filter>src\Infinite</Filter>
     </ClCompile>
+    <ClCompile Include="src\Infinite\Renderer\Buffer.cpp">
+      <Filter>src\Infinite\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Infinite\Renderer\OrthographicCamera.cpp">
+      <Filter>src\Infinite\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Infinite\Renderer\RenderCommand.cpp">
+      <Filter>src\Infinite\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Infinite\Renderer\Renderer.cpp">
+      <Filter>src\Infinite\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Infinite\Renderer\RendererAPI.cpp">
+      <Filter>src\Infinite\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="src\Infinite\Renderer\Shader.cpp">
       <Filter>src\Infinite\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\Infinite\Renderer\VertexArraycpp.cpp">
+      <Filter>src\Infinite\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLShader.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp">
       <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
@@ -1404,14 +1460,5 @@
     <ClCompile Include="src\ifnpch.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\Infinite\Renderer\Buffer.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
-    <ClCompile Include="src\Infinite\Renderer\Renderer.cpp" />
-    <ClCompile Include="src\Infinite\Renderer\VertexArraycpp.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp" />
-    <ClCompile Include="src\Infinite\Renderer\RendererAPI.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp" />
-    <ClCompile Include="src\Infinite\Renderer\RenderCommand.cpp" />
-    <ClCompile Include="src\Infinite\Renderer\OrthographicCamera.cpp" />
   </ItemGroup>
 </Project>

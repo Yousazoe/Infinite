@@ -29,8 +29,8 @@ project "Infinite"
   location "Infinite"
   kind "StaticLib"
   language "C++"
-  staticruntime "on"
   cppdialect "C++17"
+  staticruntime "on"
 
   targetdir ("bin/" .. outputdir .. "/%{prj.name}")
   objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -117,13 +117,19 @@ project "Sandbox"
 
   includedirs
   {
-    "Infinite/vendor/spdlog/include",
-    "Infinite/src/Infinite",
-    "Infinite/src/Events",
-    "Infinite/src/**.h",
-    "Infinite/src/**.cpp",
-    "Infinite/vendor/imgui",
-    "%{IncludeDir.glm}"
+      "Infinite/vendor/spdlog/include",
+
+      "Infinite/src",
+      "Infinite/src/**.h",
+      "Infinite/src/**.cpp",
+      "Infinite/src/Infinite",
+      "Infinite/src/Platform",
+
+      "Infinite/vendor",
+      "Infinite/vendor/imgui",
+      "Infinite/vendor/spdlog/include",
+
+      "%{IncludeDir.glm}"
   }
 
   links
