@@ -22,7 +22,7 @@ public:
 			 0.0f,  0.5f, 0.0f, 0.8f, 0.8f, 0.2f, 1.0f
 		};
 
-		std::shared_ptr<Infinite::VertexBuffer> vertexBuffer;
+		Infinite::Ref<Infinite::VertexBuffer> vertexBuffer;
 		vertexBuffer.reset(Infinite::VertexBuffer::Create(vertices, sizeof(vertices)));
 		Infinite::BufferLayout layout = {
 			{ Infinite::ShaderDataType::Float3, "a_Position" },
@@ -33,7 +33,7 @@ public:
 		m_VertexArray->AddVertexBuffer(vertexBuffer);
 
 		uint32_t indices[3] = { 0, 1, 2 };
-		std::shared_ptr<Infinite::IndexBuffer> indexBuffer;
+		Infinite::Ref<Infinite::IndexBuffer> indexBuffer;
 		indexBuffer.reset(Infinite::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
@@ -46,7 +46,7 @@ public:
 			 0.5f,  0.5f, 0.0f,
 			-0.5f,  0.5f, 0.0f
 		};
-		std::shared_ptr<Infinite::VertexBuffer> squareVertexBuffer;
+		Infinite::Ref<Infinite::VertexBuffer> squareVertexBuffer;
 		squareVertexBuffer.reset(Infinite::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
 		squareVertexBuffer->SetLayout({
 			{ Infinite::ShaderDataType::Float3, "a_Position" }
@@ -54,7 +54,7 @@ public:
 		m_SquareVertexArray->AddVertexBuffer(squareVertexBuffer);
 
 		uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
-		std::shared_ptr<Infinite::IndexBuffer> squareIndexBuffer;
+		Infinite::Ref<Infinite::IndexBuffer> squareIndexBuffer;
 		squareIndexBuffer.reset(Infinite::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
 		m_SquareVertexArray->SetIndexBuffer(squareIndexBuffer);
 
@@ -200,11 +200,11 @@ public:
 
 private:
 
-	std::shared_ptr<Infinite::Shader> m_Shader;
-	std::shared_ptr<Infinite::VertexArray> m_VertexArray;
+	Infinite::Ref<Infinite::Shader> m_Shader;
+	Infinite::Ref<Infinite::VertexArray> m_VertexArray;
 
-	std::shared_ptr<Infinite::Shader> m_FlatColorShader;
-	std::shared_ptr<Infinite::VertexArray> m_SquareVertexArray;
+	Infinite::Ref<Infinite::Shader> m_FlatColorShader;
+	Infinite::Ref<Infinite::VertexArray> m_SquareVertexArray;
 
 	Infinite::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition;
