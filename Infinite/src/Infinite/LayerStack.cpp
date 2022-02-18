@@ -30,7 +30,7 @@ namespace Infinite {
 	void LayerStack::PopLayer(Layer* layer)
 	{
 		auto it = std::find(m_Layers.begin(),m_Layers.end(),layer);
-		if (it != m_Layers.end())
+		if (it != m_Layers.begin() + m_LayerInsertIndex)
 		{
 			layer->OnDetach();
 			m_Layers.erase(it);
