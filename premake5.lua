@@ -17,6 +17,7 @@ IncludeDir["GLFW"] = "Infinite/vendor/GLFW/include"
 IncludeDir["GLAD"] = "Infinite/vendor/GLAD/include"
 IncludeDir["ImGui"] = "Infinite/vendor/imgui"
 IncludeDir["glm"] = "Infinite/vendor/glm"
+IncludeDir["stb_image"] = "Infinite/vendor/stb_image"
 
 group "Dependencies"
 	include "Infinite/vendor/GLFW"
@@ -43,7 +44,9 @@ project "Infinite"
     "%{prj.name}/src/**.h",
     "%{prj.name}/src/**.cpp",
     "%{prj.name}/vendor/glm/glm/**.hpp",
-    "%{prj.name}/vendor/glm/glm/**.inl"
+    "%{prj.name}/vendor/glm/glm/**.inl",
+    "%{prj.name}/vendor/stb_image/**.h",
+    "%{prj.name}/vendor/stb_image/**.cpp"
   }
 
   defines
@@ -59,7 +62,8 @@ project "Infinite"
     "%{IncludeDir.GLFW}",
     "%{IncludeDir.GLAD}",
     "%{IncludeDir.ImGui}",
-    "%{IncludeDir.glm}"
+    "%{IncludeDir.glm}",
+    "%{IncludeDir.stb_image}"
   }
 
   links

@@ -40,16 +40,17 @@ public:
 
 		m_SquareVertexArray.reset(Infinite::VertexArray::Create());
 
-		float squareVertices[3 * 4] = {
-			-0.5f, -0.5f, 0.0f,
-			 0.5f, -0.5f, 0.0f,
-			 0.5f,  0.5f, 0.0f,
-			-0.5f,  0.5f, 0.0f
+		float squareVertices[5 * 4] = {
+			-0.5f, -0.5f, 0.0f, 0.0f, 0.0f,
+			 0.5f, -0.5f, 0.0f, 1.0f, 0.0f,
+			 0.5f,  0.5f, 0.0f, 1.0f, 1.0f,
+			-0.5f,  0.5f, 0.0f, 0.0f, 1.0f
 		};
 		Infinite::Ref<Infinite::VertexBuffer> squareVertexBuffer;
 		squareVertexBuffer.reset(Infinite::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
 		squareVertexBuffer->SetLayout({
-			{ Infinite::ShaderDataType::Float3, "a_Position" }
+			{ Infinite::ShaderDataType::Float3, "a_Position" },
+			{ Infinite::ShaderDataType::Float2, "a_TexCoord"}
 			});
 		m_SquareVertexArray->AddVertexBuffer(squareVertexBuffer);
 
@@ -132,6 +133,41 @@ public:
 
 		m_FlatColorShader.reset(Infinite::Shader::Create(flatColorShaderVertexSrc, flatColorShaderFragmentSrc));
 
+
+		std::string textureShaderVertexSrc = R"(
+			#version 330 core
+			
+			layout(location = 0) in vec3 a_Position;
+			layout(location = 1) in vec2 a_TexCoord;
+			uniform mat4 u_ViewProjection;
+			uniform mat4 u_Transform;
+			out vec2 v_TexCoord;
+			void main()
+			{
+				v_TexCoord = a_TexCoord;
+				gl_Position = u_ViewProjection * u_Transform * vec4(a_Position, 1.0);	
+			}
+		)";
+
+		std::string textureShaderFragmentSrc = R"(
+			#version 330 core
+			
+			layout(location = 0) out vec4 color;
+			in vec2 v_TexCoord;
+			
+			uniform sampler2D u_Texture;
+			void main()
+			{
+				color = texture(u_Texture, v_TexCoord);
+			}
+		)";
+
+		m_TextureShader.reset(Infinite::Shader::Create(textureShaderVertexSrc, textureShaderFragmentSrc));
+
+		m_Texture = Infinite::Texture2D::Create("assets/textures/Checkerboard.png");
+
+		std::dynamic_pointer_cast<Infinite::OpenGLShader>(m_TextureShader)->Bind();
+		std::dynamic_pointer_cast<Infinite::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
 	}
 
 	void OnUpdate(Infinite::Timestep ts) override
@@ -175,9 +211,11 @@ public:
 			}
 		}
 
+		m_Texture->Bind();
+		Infinite::Renderer::Submit(m_TextureShader, m_SquareVertexArray, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
-
-		Infinite::Renderer::Submit(m_Shader, m_VertexArray);
+		// Triangle
+		// Infinite::Renderer::Submit(m_Shader, m_VertexArray);
 
 		Infinite::Renderer::EndScene();
 
@@ -203,8 +241,9 @@ private:
 	Infinite::Ref<Infinite::Shader> m_Shader;
 	Infinite::Ref<Infinite::VertexArray> m_VertexArray;
 
-	Infinite::Ref<Infinite::Shader> m_FlatColorShader;
+	Infinite::Ref<Infinite::Shader> m_FlatColorShader, m_TextureShader;
 	Infinite::Ref<Infinite::VertexArray> m_SquareVertexArray;
+	Infinite::Ref<Infinite::Texture2D> m_Texture;
 
 	Infinite::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition;
