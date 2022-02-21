@@ -165,6 +165,7 @@ public:
 		m_TextureShader.reset(Infinite::Shader::Create(textureShaderVertexSrc, textureShaderFragmentSrc));
 
 		m_Texture = Infinite::Texture2D::Create("assets/textures/Checkerboard.png");
+		m_InfiniteLogoTexture = Infinite::Texture2D::Create("assets/textures/InfiniteLogo.png");
 
 		std::dynamic_pointer_cast<Infinite::OpenGLShader>(m_TextureShader)->Bind();
 		std::dynamic_pointer_cast<Infinite::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
@@ -214,6 +215,9 @@ public:
 		m_Texture->Bind();
 		Infinite::Renderer::Submit(m_TextureShader, m_SquareVertexArray, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
+		m_InfiniteLogoTexture->Bind();
+		Infinite::Renderer::Submit(m_TextureShader, m_SquareVertexArray, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+
 		// Triangle
 		// Infinite::Renderer::Submit(m_Shader, m_VertexArray);
 
@@ -243,7 +247,7 @@ private:
 
 	Infinite::Ref<Infinite::Shader> m_FlatColorShader, m_TextureShader;
 	Infinite::Ref<Infinite::VertexArray> m_SquareVertexArray;
-	Infinite::Ref<Infinite::Texture2D> m_Texture;
+	Infinite::Ref<Infinite::Texture2D> m_Texture, m_InfiniteLogoTexture;
 
 	Infinite::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition;
