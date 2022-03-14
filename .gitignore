@@ -1,4 +1,5 @@
 # Directories
+.idea/
 .vs/
 /bin/
 bin-int/
