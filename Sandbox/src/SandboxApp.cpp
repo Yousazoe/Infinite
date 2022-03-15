@@ -11,7 +11,7 @@ class ExampleLayer : public Infinite::Layer
 {
 public:
 	ExampleLayer()
-		: Layer("Example"), m_Camera(-1.6f, 1.6f, -0.9f, 0.9f), m_CameraPosition(0.0f)
+		: Layer("Example"), m_CameraController(1280.0f / 720.0f)
 	{
 		m_VertexArray.reset(Infinite::VertexArray::Create());
 
@@ -146,29 +146,14 @@ public:
 
 	void OnUpdate(Infinite::Timestep ts) override
 	{
-		if (Infinite::Input::IsKeyPressed(IFN_KEY_LEFT))
-			m_CameraPosition.x -= m_CameraMoveSpeed * ts;
-		else if (Infinite::Input::IsKeyPressed(IFN_KEY_RIGHT))
-			m_CameraPosition.x += m_CameraMoveSpeed * ts;
+		// Update
+		m_CameraController.OnUpdate(ts);
 
-		if (Infinite::Input::IsKeyPressed(IFN_KEY_DOWN))
-			m_CameraPosition.y -= m_CameraMoveSpeed * ts;
-		else if (Infinite::Input::IsKeyPressed(IFN_KEY_UP))
-			m_CameraPosition.y += m_CameraMoveSpeed * ts;
-
-		if (Infinite::Input::IsKeyPressed(IFN_KEY_A))
-			m_CameraRotation += m_CameraRotationSpeed * ts;
-		else if (Infinite::Input::IsKeyPressed(IFN_KEY_D))
-			m_CameraRotation -= m_CameraRotationSpeed * ts;
-
-
+		// Render
 		Infinite::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		Infinite::RenderCommand::Clear();
 
-		m_Camera.SetPosition(m_CameraPosition);
-		m_Camera.SetRotation(m_CameraRotation);
-
-		Infinite::Renderer::BeginScene(m_Camera);
+		Infinite::Renderer::BeginScene(m_CameraController.GetCamera());
 
 		glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
 
@@ -210,8 +195,9 @@ public:
 	}
 
 
-	void OnEvent(Infinite::Event& event) override
+	void OnEvent(Infinite::Event& e) override
 	{
+		m_CameraController.OnEvent(e);
 	}
 
 
@@ -224,11 +210,7 @@ private:
 	Infinite::Ref<Infinite::VertexArray> m_SquareVertexArray;
 	Infinite::Ref<Infinite::Texture2D> m_Texture, m_InfiniteLogoTexture;
 
-	Infinite::OrthographicCamera m_Camera;
-	glm::vec3 m_CameraPosition;
-	float m_CameraRotation = 0.0f;
-	float m_CameraMoveSpeed = 5.0f;
-	float m_CameraRotationSpeed = 3.0f;
+	Infinite::OrthographicCameraController m_CameraController;
 
 	glm::vec3 m_SquareColor = { 0.2f, 0.3f, 0.8f };
 };

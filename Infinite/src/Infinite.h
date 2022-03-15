@@ -11,6 +11,7 @@
 #include "Infinite/Core/Input.h"
 #include "Infinite/Core/KeyCodes.h"
 #include "Infinite/Core/MouseButtonCodes.h"
+#include "Infinite/OrthographicCameraController.h"
 
 #include <stdio.h>
 
