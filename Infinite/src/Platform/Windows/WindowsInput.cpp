@@ -1,6 +1,6 @@
 #include "ifnpch.h"
 #include "WindowsInput.h"
-#include "./Infinite/Application.h"
+#include "Infinite/Core/Application.h"
 
 #include <GLFW/glfw3.h>
 

@@ -54,16 +54,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Infinite\Application.h">
+    <ClInclude Include="src\Infinite\Core\Application.h">
       <Filter>src\Infinite</Filter>
     </ClInclude>
-    <ClInclude Include="src\Infinite\Core.h">
+    <ClInclude Include="src\Infinite\Core\Core.h">
       <Filter>src\Infinite</Filter>
     </ClInclude>
     <ClInclude Include="src\Infinite\Core\Timestep.h">
       <Filter>src\Infinite\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Infinite\EntryPoint.h">
+    <ClInclude Include="src\Infinite\Core\EntryPoint.h">
       <Filter>src\Infinite</Filter>
     </ClInclude>
     <ClInclude Include="src\Infinite\Events\ApplicationEvent.h">
@@ -81,25 +81,25 @@
     <ClInclude Include="src\Infinite\ImGui\ImGuiLayer.h">
       <Filter>src\Infinite\ImGui</Filter>
     </ClInclude>
-    <ClInclude Include="src\Infinite\Infinite.h">
+    <ClInclude Include="src\Infinite.h">
       <Filter>src\Infinite</Filter>
     </ClInclude>
-    <ClInclude Include="src\Infinite\Input.h">
+    <ClInclude Include="src\Infinite\Core\Input.h">
       <Filter>src\Infinite</Filter>
     </ClInclude>
-    <ClInclude Include="src\Infinite\KeyCodes.h">
+    <ClInclude Include="src\Infinite\Core\KeyCodes.h">
       <Filter>src\Infinite</Filter>
     </ClInclude>
-    <ClInclude Include="src\Infinite\Layer.h">
+    <ClInclude Include="src\Infinite\Core\Layer.h">
       <Filter>src\Infinite</Filter>
     </ClInclude>
-    <ClInclude Include="src\Infinite\LayerStack.h">
+    <ClInclude Include="src\Infinite\Core\LayerStack.h">
       <Filter>src\Infinite</Filter>
     </ClInclude>
-    <ClInclude Include="src\Infinite\Log.h">
+    <ClInclude Include="src\Infinite\Core\Log.h">
       <Filter>src\Infinite</Filter>
     </ClInclude>
-    <ClInclude Include="src\Infinite\MouseButtonCodes.h">
+    <ClInclude Include="src\Infinite\Core\MouseButtonCodes.h">
       <Filter>src\Infinite</Filter>
     </ClInclude>
     <ClInclude Include="src\Infinite\Renderer\Buffer.h">
@@ -153,7 +153,7 @@
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>src\Platform\Windows</Filter>
     </ClInclude>
-    <ClInclude Include="src\Window.h">
+    <ClInclude Include="src\Infinite\Core\Window.h">
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="src\ifnpch.h">
@@ -1409,7 +1409,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Infinite\Application.cpp">
+    <ClCompile Include="src\Infinite\Core\Application.cpp">
       <Filter>src\Infinite</Filter>
     </ClCompile>
     <ClCompile Include="src\Infinite\ImGui\ImGuiBuild.cpp">
@@ -1418,13 +1418,13 @@
     <ClCompile Include="src\Infinite\ImGui\ImGuiLayer.cpp">
       <Filter>src\Infinite\ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="src\Infinite\Layer.cpp">
+    <ClCompile Include="src\Infinite\Core\Layer.cpp">
       <Filter>src\Infinite</Filter>
     </ClCompile>
-    <ClCompile Include="src\Infinite\LayerStack.cpp">
+    <ClCompile Include="src\Infinite\Core\LayerStack.cpp">
       <Filter>src\Infinite</Filter>
     </ClCompile>
-    <ClCompile Include="src\Infinite\Log.cpp">
+    <ClCompile Include="src\Infinite\Core\Log.cpp">
       <Filter>src\Infinite</Filter>
     </ClCompile>
     <ClCompile Include="src\Infinite\Renderer\Buffer.cpp">

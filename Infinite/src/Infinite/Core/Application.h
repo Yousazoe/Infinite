@@ -1,14 +1,15 @@
 #pragma once
 
 #include "Core.h"
-#include "../Window.h"
-#include "LayerStack.h"
-#include "Events/Event.h"
-#include "Events/ApplicationEvent.h"
+#include "Window.h"
 
-#include "Core/Timestep.h"
+#include "Infinite/Core/LayerStack.h"
+#include "Infinite/Events/Event.h"
+#include "Infinite/Events/ApplicationEvent.h"
 
-#include "ImGui/ImGuiLayer.h"
+#include "Infinite/Core/Timestep.h"
+
+#include "Infinite/ImGui/ImGuiLayer.h"
 
 namespace Infinite {
 	class Application

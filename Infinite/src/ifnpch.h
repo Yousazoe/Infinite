@@ -14,7 +14,7 @@
 #include <unordered_map>
 #include <unordered_set>
 
-#include "Infinite/Log.h"
+#include "Infinite/Core/Log.h"
 
 #ifdef IFN_PLATFORM_WINDOWS
     #include <Windows.h>

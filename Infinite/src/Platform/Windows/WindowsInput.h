@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Infinite/Input.h"
+#include "Infinite/Core/Input.h"
 
 namespace Infinite {
 

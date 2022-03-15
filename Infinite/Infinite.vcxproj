@@ -144,22 +144,22 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\Infinite\Application.h" />
-    <ClInclude Include="src\Infinite\Core.h" />
+    <ClInclude Include="src\Infinite\Core\Application.h" />
+    <ClInclude Include="src\Infinite\Core\Core.h" />
     <ClInclude Include="src\Infinite\Core\Timestep.h" />
-    <ClInclude Include="src\Infinite\EntryPoint.h" />
+    <ClInclude Include="src\Infinite\Core\EntryPoint.h" />
     <ClInclude Include="src\Infinite\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Infinite\Events\Event.h" />
     <ClInclude Include="src\Infinite\Events\KeyEvent.h" />
     <ClInclude Include="src\Infinite\Events\MouseEvent.h" />
     <ClInclude Include="src\Infinite\ImGui\ImGuiLayer.h" />
-    <ClInclude Include="src\Infinite\Infinite.h" />
-    <ClInclude Include="src\Infinite\Input.h" />
-    <ClInclude Include="src\Infinite\KeyCodes.h" />
-    <ClInclude Include="src\Infinite\Layer.h" />
-    <ClInclude Include="src\Infinite\LayerStack.h" />
-    <ClInclude Include="src\Infinite\Log.h" />
-    <ClInclude Include="src\Infinite\MouseButtonCodes.h" />
+    <ClInclude Include="src\Infinite.h" />
+    <ClInclude Include="src\Infinite\Core\Input.h" />
+    <ClInclude Include="src\Infinite\Core\KeyCodes.h" />
+    <ClInclude Include="src\Infinite\Core\Layer.h" />
+    <ClInclude Include="src\Infinite\Core\LayerStack.h" />
+    <ClInclude Include="src\Infinite\Core\Log.h" />
+    <ClInclude Include="src\Infinite\Core\MouseButtonCodes.h" />
     <ClInclude Include="src\Infinite\Renderer\Buffer.h" />
     <ClInclude Include="src\Infinite\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\Infinite\Renderer\OrthographicCamera.h" />
@@ -177,7 +177,7 @@
     <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
-    <ClInclude Include="src\Window.h" />
+    <ClInclude Include="src\Infinite\Core\Window.h" />
     <ClInclude Include="src\ifnpch.h" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />
     <ClInclude Include="vendor\glm\glm\detail\_features.hpp" />
@@ -597,12 +597,12 @@
     <ClInclude Include="vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Infinite\Application.cpp" />
+    <ClCompile Include="src\Infinite\Core\Application.cpp" />
     <ClCompile Include="src\Infinite\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Infinite\ImGui\ImGuiLayer.cpp" />
-    <ClCompile Include="src\Infinite\Layer.cpp" />
-    <ClCompile Include="src\Infinite\LayerStack.cpp" />
-    <ClCompile Include="src\Infinite\Log.cpp" />
+    <ClCompile Include="src\Infinite\Core\Layer.cpp" />
+    <ClCompile Include="src\Infinite\Core\LayerStack.cpp" />
+    <ClCompile Include="src\Infinite\Core\Log.cpp" />
     <ClCompile Include="src\Infinite\Renderer\Buffer.cpp" />
     <ClCompile Include="src\Infinite\Renderer\OrthographicCamera.cpp" />
     <ClCompile Include="src\Infinite\Renderer\RenderCommand.cpp" />

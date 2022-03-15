@@ -1,10 +1,10 @@
 #pragma once
 
-#include "../Layer.h"
+#include "Infinite/Core/Layer.h"
 
-#include "../Events/KeyEvent.h"
-#include "../Events/MouseEvent.h"
-#include "../Events/ApplicationEvent.h"
+#include "Infinite/Events/KeyEvent.h"
+#include "Infinite/Events/MouseEvent.h"
+#include "Infinite/Events/ApplicationEvent.h"
 
 namespace Infinite {
 

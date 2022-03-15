@@ -2,7 +2,7 @@
 
 #include "ifnpch.h"
 
-#include "Infinite/Core.h"
+#include "Infinite/Core/Core.h"
 #include "Infinite/Events/Event.h"
 
 namespace Infinite {

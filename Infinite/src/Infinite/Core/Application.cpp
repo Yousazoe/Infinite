@@ -1,10 +1,9 @@
 #include "ifnpch.h"
 #include "Application.h"
 
-#include "Events/ApplicationEvent.h"
-#include "Log.h"
+#include "Infinite/Core/Log.h"
 
-#include "./Renderer/Renderer.h"
+#include "Infinite/Renderer/Renderer.h"
 
 #include "Input.h"
 

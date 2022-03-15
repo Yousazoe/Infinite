@@ -3,7 +3,7 @@
 
 #include <string>
 
-#include "Infinite/Core.h"
+#include "Infinite/Core/Core.h"
 
 namespace Infinite {
 

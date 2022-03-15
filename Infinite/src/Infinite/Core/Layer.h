@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Core.h"
-#include "Events/Event.h"
-#include "Core/Timestep.h"
+#include "Infinite/Core/Core.h"
+#include "Infinite/Events/Event.h"
+#include "Infinite/Core/Timestep.h"
 
 namespace Infinite {
 
