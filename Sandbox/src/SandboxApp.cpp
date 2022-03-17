@@ -11,7 +11,7 @@ class ExampleLayer : public Infinite::Layer
 {
 public:
 	ExampleLayer()
-		: Layer("Example"), m_CameraController(1280.0f / 720.0f)
+		: Layer("Example"), m_CameraController(1280.0f / 720.0f, true)
 	{
 		m_VertexArray.reset(Infinite::VertexArray::Create());
 
@@ -198,6 +198,15 @@ public:
 	void OnEvent(Infinite::Event& e) override
 	{
 		m_CameraController.OnEvent(e);
+
+		/*if (e.GetEventType() == Infinite::EventType::WindowResize)
+		{
+			auto& re = (Infinite::WindowResizeEvent&)e;
+			
+			float zoom = (float)re.GetWidth() / 1200.0f;
+			m_CameraController.SetZoomLevel(zoom);
+		}*/
+	
 	}
 
 
