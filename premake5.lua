@@ -84,7 +84,6 @@ project "Infinite"
 
     defines
     {
-      "IFN_PLATFORM_WINDOWS",
       "IFN_BUILD_DLL",
       "GLFW_INCLUDE_NONE"
     }
@@ -148,11 +147,6 @@ project "Sandbox"
 
   filter "system:windows"
     systemversion "latest"
-
-    defines
-    {
-      "IFN_PLATFORM_WINDOWS"
-    }
 
   filter "configurations:Debug"
       defines "IFN_DEBUG"

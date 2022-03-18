@@ -93,7 +93,7 @@ namespace Infinite {
 	void OpenGLShader::Compile(const std::unordered_map<GLenum, std::string>& shaderSources)
 	{
 		GLuint program = glCreateProgram();
-		IFN_CORE_ASSERT(shaderSources <= 2, "We only support 2 shaders for now!");
+		IFN_CORE_ASSERT(shaderSources.size() <= 2, "We only support 2 shaders for now!");
 		std::array<GLenum, 2> glShaderIDs;
 		int glShaderIDIndex = 0;
 

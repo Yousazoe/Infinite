@@ -2,33 +2,76 @@
 
 #include <memory>
 
-#ifdef IFN_PLATFORM_WINDOWS
-#if IFN_DYNAMIC_LINK
-	#ifdef IFN_BUILD_DLL
-		#define INFINITE_API _declspec(dllexport)
+// Platform detection using predefined macros
+#ifdef _WIN32
+	/* Windows x64/x86 */
+	#ifdef _WIN64
+		/* Windows x64  */
+		#define IFN_PLATFORM_WINDOWS
 	#else
-		#define INFINITE_API _declspec(dllimport)
+		/* Windows x86 */
+		#error "x86 Builds are not supported!"
+	#endif
+#elif defined(__APPLE__) || defined(__MACH__)
+	#include <TargetConditionals.h>
+	/* TARGET_OS_MAC exists on all the platforms
+	 * so we must check all of them (in this order)
+	 * to ensure that we're running on MAC
+	 * and not some other Apple platform */
+	#if TARGET_IPHONE_SIMULATOR == 1
+		#error "IOS simulator is not supported!"
+	#elif TARGET_OS_IPHONE == 1
+		#define IFN_PLATFORM_IOS
+		#error "IOS is not supported!"
+	#elif TARGET_OS_MAC == 1
+		#define IFN_PLATFORM_MACOS
+		#error "MacOS is not supported!"
+	#else
+		#error "Unknown Apple platform!"
+	#endif
+ /* We also have to check __ANDROID__ before __linux__
+  * since android is based on the linux kernel
+  * it has __linux__ defined */
+#elif defined(__ANDROID__)
+	#define IFN_PLATFORM_ANDROID
+	#error "Android is not supported!"
+#elif defined(__linux__)
+	#define IFN_PLATFORM_LINUX
+	#error "Linux is not supported!"
+#else
+	/* Unknown compiler/platform */
+	#error "Unknown platform!"
+#endif // End of platform detection
+
+
+// DLL support
+#ifdef IFN_PLATFORM_WINDOWS
+	#if IFN_DYNAMIC_LINK
+		#ifdef IFN_BUILD_DLL
+			#define INFINITE_API __declspec(dllexport)
+		#else
+			#define INFINITE_API __declspec(dllimport)
+		#endif
+	#else
+		#define INFINITE_API
 	#endif
 #else
-    #define INFINITE_API
-#endif
-#else
-	#error Infinite only support Windows
-#endif
-
-#ifdef IFN_ENABLE_ASSERTS
-    #define IFN_ASSERT(x, ...) { if(!(x)) { IFN_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
-    #define IFN_CORE_ASSERT(x, ...) { if(!(x)) { IFN_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
-#else
-    #define IFN_ASSERT(x, ...)
-    #define IFN_CORE_ASSERT(x, ...)
-#endif
+	#error Infinite only supports Windows!
+#endif // End of DLL support
 
 #ifdef IFN_DEBUG
 	#define IFN_ENABLE_ASSERTS
 #endif
 
-#define BIT(x) (1 << (x))
+#ifdef IFN_ENABLE_ASSERTS
+	#define IFN_ASSERT(x, ...) { if(!(x)) { IFN_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#define IFN_CORE_ASSERT(x, ...) { if(!(x)) { IFN_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+#else
+	#define IFN_ASSERT(x, ...)
+	#define IFN_CORE_ASSERT(x, ...)
+#endif
+
+#define BIT(x) (1 << x)
 
 #define IFN_BIND_EVENT_FN(fn) std::bind(&fn, this, std::placeholders::_1)
 
