@@ -31,7 +31,7 @@ namespace Infinite {
 		virtual void Shutdown();
 	private:
 		GLFWwindow* m_Window;
-		GraphicsContext* m_Context;
+		Scope<GraphicsContext> m_Context;
 
 		struct WindowData
 		{
