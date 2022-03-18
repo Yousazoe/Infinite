@@ -15,14 +15,29 @@ namespace Infinite {
 	void OrthographicCameraController::OnUpdate(Timestep ts)
 	{
 		if (Input::IsKeyPressed(IFN_KEY_A))
-			m_CameraPosition.x -= m_CameraTranslationSpeed * ts;
+		{
+			m_CameraPosition.x -= cos(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+			m_CameraPosition.y -= sin(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+		}
 		else if (Input::IsKeyPressed(IFN_KEY_D))
-			m_CameraPosition.x += m_CameraTranslationSpeed * ts;
+		{
+			m_CameraPosition.x += cos(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+			m_CameraPosition.y += sin(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+		}
 
 		if (Input::IsKeyPressed(IFN_KEY_W))
-			m_CameraPosition.y -= m_CameraTranslationSpeed * ts;
+		{
+			m_CameraPosition.x += -sin(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+			m_CameraPosition.y += cos(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+		}
+
 		else if (Input::IsKeyPressed(IFN_KEY_S))
-			m_CameraPosition.y += m_CameraTranslationSpeed * ts;
+		{
+			{
+				m_CameraPosition.x -= -sin(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+				m_CameraPosition.y -= cos(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+			}
+		}
 		
 		if (m_Rotation)
 		{
@@ -35,6 +50,11 @@ namespace Infinite {
 
 			m_CameraTranslationSpeed = m_ZoomLevel;
 		}
+
+		if (m_CameraRotation > 180.0f)
+			m_CameraRotation -= 360.0f;
+		else if (m_CameraRotation <= -180.0f)
+			m_CameraRotation += 360.0f;
 
 		m_Camera.SetPosition(m_CameraPosition);
 	}
