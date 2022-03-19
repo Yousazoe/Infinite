@@ -1,4 +1,5 @@
 #include <Infinite.h>
+#include <Infinite//Core/EntryPoint.h>
 
 #include "../Platform/OpenGL/OpenGLShader.h"
 
@@ -7,13 +8,15 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+#include "Sandbox2D.h"
+
 class ExampleLayer : public Infinite::Layer
 {
 public:
 	ExampleLayer()
 		: Layer("Example"), m_CameraController(1280.0f / 720.0f, true)
 	{
-		m_VertexArray.reset(Infinite::VertexArray::Create());
+		m_VertexArray = Infinite::VertexArray::Create();
 
 
 		float vertices[3 * 7] = {
@@ -38,7 +41,7 @@ public:
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
 
-		m_SquareVertexArray.reset(Infinite::VertexArray::Create());
+		m_SquareVertexArray = Infinite::VertexArray::Create();
 
 		float squareVertices[5 * 4] = {
 			-0.5f, -0.5f, 0.0f, 0.0f, 0.0f,
@@ -228,7 +231,8 @@ class Sandbox : public Infinite::Application {
 public:
 	Sandbox() 
 	{
-		PushLayer(new ExampleLayer());
+		// PushLayer(new ExampleLayer());
+		PushLayer(new Sandbox2D());
 	}
 	~Sandbox() {}
 };
