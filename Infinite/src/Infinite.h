@@ -20,6 +20,7 @@
 
 //--------------------- Renderer ---------------------//
 #include "Infinite/Renderer/Renderer.h"
+#include "Infinite/Renderer/Renderer2D.h"
 #include "Infinite/Renderer/RenderCommand.h"
 
 #include "Infinite/Renderer/Buffer.h"
