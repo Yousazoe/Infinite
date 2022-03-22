@@ -21,5 +21,7 @@ private:
 	Infinite::Ref<Infinite::VertexArray> m_SquareVertexArray;
 	Infinite::Ref<Infinite::Shader> m_FlatColorShader;
 
+	Infinite::Ref<Infinite::Texture2D> m_CheckerboardTexture;
+
 	glm::vec4 m_SquareColor = { 0.2f, 0.3f, 0.8f, 1.0f };
 };
