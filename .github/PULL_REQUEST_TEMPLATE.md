@@ -1,10 +1,10 @@
 ---
-name: 'Pull Request: New issue'
-about: Report and propose a fix for a (small) issue in Infinite
+name: 'Pull Request'
+about: Propose a fix for a (small) issue in Infinite
 ---
 
-#### Describe the issue
-A clear and concise description of what the issue is.
+#### Describe the issue (if no issue has been made)
+A clear and concise description of what the issue is. Explain the difference between the expected and the current behavior.
 A screenshot or copy of the error could be helpful as well.
 
 #### Expected behavior
@@ -18,8 +18,12 @@ List of related issues/PRs this will solve:
 
  Impact                  | Issue/PR
 ------------------------ | ------
-Other issues this solves | None or #number(s)
+Issues this solves       | None or #number(s)
 Other PRs this solves    | None or #number(s)
+
+#### Proposed fix _(Make sure you've read [on how to contribute](https://github.com/Yousazoe/Infinite/blob/master/.github/CONTRIBUTING.md) to Infinite)_
+A short description of what this fix is and how it fixed the issue you described.
+
 
 #### Additional context
 Add any other context about the solution here. Did you test the solution on all (relevant) platforms?
