@@ -32,9 +32,11 @@ namespace Infinite {
 	{
 		std::string Name;
 		ShaderDataType Type;
-		uint32_t Offset;
+		size_t Offset;
 		uint32_t Size;
 		bool Normalized;
+
+		BufferElement() = default;
 
 		BufferElement(ShaderDataType type, const std::string& name, bool normalize = false)
 			: Name(name), Type(type), Size(ShaderDataTypeSize(type)), Offset(0), Normalized(false)
@@ -84,7 +86,7 @@ namespace Infinite {
 		void CalculateOffsetsAndStride()
 		{
 			m_Stride = 0;
-			uint32_t offset = 0;
+			size_t offset = 0;
 			for (auto& element : m_Elements)
 			{
 				element.Offset = offset;

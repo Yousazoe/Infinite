@@ -40,7 +40,7 @@ namespace Infinite {
 
 		IFN_CORE_INFO("Creating window {0} ({1}, {2})", props.Title, props.Width, props.Height);
 
-		if (--s_GLFWWindowCount == 0)
+		if (s_GLFWWindowCount == 0)
 		{
 			IFN_CORE_INFO("Initializing GLFW");
 			int success = glfwInit();
