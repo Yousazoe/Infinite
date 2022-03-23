@@ -6,7 +6,7 @@
 
 namespace Infinite {
 
-	class INFINITE_API Layer
+	class Layer
 	{
 	public:
 		Layer(const std::string& name = "Layer");

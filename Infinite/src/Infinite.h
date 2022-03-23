@@ -2,6 +2,8 @@
 
 //For use by Infinite Applications
 
+#include "Infinite/Core/Core.h"
+
 #include "Infinite/Core/Application.h"
 #include "Infinite/Core/Layer.h"
 #include "Infinite/Core/Log.h"

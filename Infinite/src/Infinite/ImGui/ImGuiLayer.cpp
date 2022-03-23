@@ -1,9 +1,9 @@
 #include "ifnpch.h"
-#include "ImGuiLayer.h"
+#include "Infinite/ImGui/ImGuiLayer.h"
 
-#include "../imgui/imgui.h"
-#include "../imgui/examples/imgui_impl_glfw.h"
-#include "../imgui/examples/imgui_impl_opengl3.h"
+#include <imgui.h>
+#include <examples/imgui_impl_glfw.h>
+#include <examples/imgui_impl_opengl3.h>
 
 // TEMPORARY
 #include <GLFW/glfw3.h>

@@ -1,12 +1,7 @@
 #include "ifnpch.h"
-#include "LayerStack.h"
+#include "Infinite/Core/LayerStack.h"
 
 namespace Infinite {
-
-	LayerStack::LayerStack()
-	{
-
-	}
 
 	LayerStack::~LayerStack()
 	{

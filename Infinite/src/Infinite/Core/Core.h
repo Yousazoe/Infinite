@@ -43,22 +43,6 @@
 	#error "Unknown platform!"
 #endif // End of platform detection
 
-
-// DLL support
-#ifdef IFN_PLATFORM_WINDOWS
-	#if IFN_DYNAMIC_LINK
-		#ifdef IFN_BUILD_DLL
-			#define INFINITE_API __declspec(dllexport)
-		#else
-			#define INFINITE_API __declspec(dllimport)
-		#endif
-	#else
-		#define INFINITE_API
-	#endif
-#else
-	#error Infinite only supports Windows!
-#endif // End of DLL support
-
 #ifdef IFN_DEBUG
 	#define IFN_ENABLE_ASSERTS
 #endif

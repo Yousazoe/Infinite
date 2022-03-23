@@ -1,16 +1,16 @@
 #pragma once
 
-#include "Core.h"
-#include "Layer.h"
+#include "Infinite/Core/Core.h"
+#include "Infinite/Core/Layer.h"
 
 #include <vector>
 
 namespace Infinite {
 
-	class INFINITE_API LayerStack
+	class LayerStack
 	{
 	public:
-		LayerStack();
+		LayerStack() = default;
 		~LayerStack();
 
 		void PushLayer(Layer* layer);

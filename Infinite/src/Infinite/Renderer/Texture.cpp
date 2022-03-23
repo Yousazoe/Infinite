@@ -1,7 +1,7 @@
 #include "ifnpch.h"
-#include "Texture.h"
+#include "Infinite/Renderer/Texture.h"
 
-#include "Renderer.h"
+#include "Infinite/Renderer/Renderer.h"
 #include "Platform/OpenGL/OpenGLTexture.h"
 
 namespace Infinite {

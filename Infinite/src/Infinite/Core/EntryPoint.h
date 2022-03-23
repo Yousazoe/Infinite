@@ -1,4 +1,5 @@
 #pragma once
+#include "Infinite/Core/Core.h"
 
 #ifdef IFN_PLATFORM_WINDOWS
 

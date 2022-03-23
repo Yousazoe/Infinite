@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Core.h"
-#include "Window.h"
+#include "Infinite/Core/Core.h"
+#include "Infinite/Core/Window.h"
 
 #include "Infinite/Core/LayerStack.h"
 #include "Infinite/Events/Event.h"
@@ -16,7 +16,7 @@ namespace Infinite {
 	{
 	public:
 		Application();
-		virtual ~Application() = default;
+		virtual ~Application();
 
 		void Run();
 		void OnEvent(Event& e);

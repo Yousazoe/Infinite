@@ -1,13 +1,13 @@
 #include "ifnpch.h"
-#include "Buffer.h"
+#include "Infinite/Renderer/Buffer.h"
 
-#include "Renderer.h"
+#include "Infinite/Renderer/Renderer.h"
 
 #include "Platform/OpenGL/OpenGLBuffer.h"
 
 namespace Infinite {
 
-	VertexBuffer* VertexBuffer::Create(float* vertices, uint32_t size)
+	Ref<VertexBuffer> VertexBuffer::Create(float* vertices, uint32_t size)
 	{
 		switch (Renderer::GetAPI())
 		{
@@ -15,14 +15,14 @@ namespace Infinite {
 			IFN_ASSERT(false, "RendererAPI::None is currently not supported!");
 			return nullptr;
 		case RendererAPI::API::OpenGL:
-			return new OpenGLVertexBuffer(vertices, size);
+			return CreateRef<OpenGLVertexBuffer>(vertices, size);
 		}
 
 		IFN_ASSERT(false, "Unknown RendererAPI!");
 		return nullptr;
 	}
 
-	IndexBuffer* IndexBuffer::Create(uint32_t* indices, uint32_t size)
+	Ref<IndexBuffer> IndexBuffer::Create(uint32_t* indices, uint32_t size)
 	{
 		switch (Renderer::GetAPI())
 		{
@@ -30,7 +30,7 @@ namespace Infinite {
 			IFN_ASSERT(false, "RendererAPI::None is currently not supported!");
 			return nullptr;
 		case RendererAPI::API::OpenGL:
-			return new OpenGLIndexBuffer(indices, size);
+			return CreateRef<OpenGLIndexBuffer>(indices, size);
 		}
 
 		IFN_ASSERT(false, "Unknown RendererAPI!");

@@ -1,9 +1,7 @@
 #include <Infinite.h>
-#include <Infinite//Core/EntryPoint.h>
+#include <Infinite/Core/EntryPoint.h>
 
-#include "../Platform/OpenGL/OpenGLShader.h"
-
-#include "../imgui/imgui.h"
+#include <imgui/imgui.h>
 
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
@@ -14,7 +12,7 @@ class ExampleLayer : public Infinite::Layer
 {
 public:
 	ExampleLayer()
-		: Layer("Example"), m_CameraController(1280.0f / 720.0f, true)
+		: Layer("Example"), m_CameraController(1280.0f / 720.0f)
 	{
 		m_VertexArray = Infinite::VertexArray::Create();
 
@@ -25,8 +23,7 @@ public:
 			 0.0f,  0.5f, 0.0f, 0.8f, 0.8f, 0.2f, 1.0f
 		};
 
-		Infinite::Ref<Infinite::VertexBuffer> vertexBuffer;
-		vertexBuffer.reset(Infinite::VertexBuffer::Create(vertices, sizeof(vertices)));
+		Infinite::Ref<Infinite::VertexBuffer> vertexBuffer = Infinite::VertexBuffer::Create(vertices, sizeof(vertices));
 		Infinite::BufferLayout layout = {
 			{ Infinite::ShaderDataType::Float3, "a_Position" },
 			{ Infinite::ShaderDataType::Float4, "a_Color" }
@@ -36,8 +33,7 @@ public:
 		m_VertexArray->AddVertexBuffer(vertexBuffer);
 
 		uint32_t indices[3] = { 0, 1, 2 };
-		Infinite::Ref<Infinite::IndexBuffer> indexBuffer;
-		indexBuffer.reset(Infinite::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
+		Infinite::Ref<Infinite::IndexBuffer> indexBuffer = Infinite::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
 
@@ -49,8 +45,7 @@ public:
 			 0.5f,  0.5f, 0.0f, 1.0f, 1.0f,
 			-0.5f,  0.5f, 0.0f, 0.0f, 1.0f
 		};
-		Infinite::Ref<Infinite::VertexBuffer> squareVertexBuffer;
-		squareVertexBuffer.reset(Infinite::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
+		Infinite::Ref<Infinite::VertexBuffer> squareVertexBuffer = Infinite::VertexBuffer::Create(squareVertices, sizeof(squareVertices));
 		squareVertexBuffer->SetLayout({
 			{ Infinite::ShaderDataType::Float3, "a_Position" },
 			{ Infinite::ShaderDataType::Float2, "a_TexCoord"}
@@ -58,8 +53,7 @@ public:
 		m_SquareVertexArray->AddVertexBuffer(squareVertexBuffer);
 
 		uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
-		Infinite::Ref<Infinite::IndexBuffer> squareIndexBuffer;
-		squareIndexBuffer.reset(Infinite::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
+		Infinite::Ref<Infinite::IndexBuffer> squareIndexBuffer = Infinite::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t));
 		m_SquareVertexArray->SetIndexBuffer(squareIndexBuffer);
 
 
@@ -143,8 +137,8 @@ public:
 		m_Texture = Infinite::Texture2D::Create("assets/textures/Checkerboard.png");
 		m_InfiniteLogoTexture = Infinite::Texture2D::Create("assets/textures/InfiniteLogo.png");
 
-		std::dynamic_pointer_cast<Infinite::OpenGLShader>(textureShader)->Bind();
-		std::dynamic_pointer_cast<Infinite::OpenGLShader>(textureShader)->UploadUniformInt("u_Texture", 0);
+		textureShader->Bind();
+		textureShader->SetInt("u_Texture", 0);
 	}
 
 	void OnUpdate(Infinite::Timestep ts) override
@@ -160,8 +154,8 @@ public:
 
 		glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
 
-		std::dynamic_pointer_cast<Infinite::OpenGLShader>(m_FlatColorShader)->Bind();
-		std::dynamic_pointer_cast<Infinite::OpenGLShader>(m_FlatColorShader)->UploadUniformFloat3("u_Color", m_SquareColor);
+		m_FlatColorShader->Bind();
+		m_FlatColorShader->SetFloat3("u_Color", m_SquareColor);
 
 		for (int y = 0; y < 20; y++)
 		{

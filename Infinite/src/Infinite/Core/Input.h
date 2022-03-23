@@ -4,7 +4,7 @@
 
 namespace Infinite {
 
-	class INFINITE_API Input
+	class Input
 	{
 	protected:
 		Input() = default;

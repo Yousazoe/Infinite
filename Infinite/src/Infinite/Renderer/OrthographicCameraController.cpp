@@ -1,5 +1,5 @@
 #include "ifnpch.h"
-#include "OrthographicCameraController.h"
+#include "Infinite/Renderer/OrthographicCameraController.h"
 
 #include "Infinite/Core/Input.h"
 #include "Infinite/Core/KeyCodes.h"

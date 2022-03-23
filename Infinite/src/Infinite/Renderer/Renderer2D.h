@@ -1,8 +1,8 @@
 #pragma once
 
-#include "OrthographicCamera.h"
+#include "Infinite/Renderer/OrthographicCamera.h"
 
-#include "Texture.h"
+#include "Infinite/Renderer/Texture.h"
 
 namespace Infinite {
 	class Renderer2D
