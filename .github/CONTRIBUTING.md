@@ -50,15 +50,29 @@ If you're not sure what any of that means, check out Thinkful's [GitHub Pull Req
 
 - Limit your changes to only what is required to implement the fix or feature. In particular, avoid style or formatting tools that may modify the formatting of other areas of the code.
 
+- Use descriptive commit titles/messages. "Implemented \<feature\>" or "Fixed \<problem\> is better than "Updated \<file\>".
+
+- Make sure the code you submit compiles and runs without issues. When we set up unit tests and continuous integration we also expect that the pull request should pass all tests.
+
+- Use [closing keywords][github-help-closing-keywords] in the appropriate section of our Pull Request template where applicable.
+
 - Follow our coding conventions, which we've intentionally kept quite minimal.
 
 ### Coding Conventions
 
-- For variables we use readable camel case: `doSomethingCool`. If they are class members use the 'm_' prefix: `m_DoSomethingCool`. When they are static use the 's_' prefix: `s_DoSomethingCool`.
+- Naming convention:
+  - For functions we use pascal case: **`FunctionName`**.
+  - For (scoped) variables and function parameters we use camel case: **`variableName`** and **`parameterName`**.
 
-- Use tabs for indentation, not spaces.
+  - For class names we use pascal case: **`ClassName`**.
 
-- When in doubt, match the code that's already there.
+  - For class variables we use the Hungarian notation:
+    - Class member variables get the 'm_' prefix: **`m_ClassMemberVariableName`**.
+    - Class static variables get the 's_' prefix: **`s_ClassStaticVariableName`**.
+
+  - For macros we use snake case: **`MACRO_NAME`**.
+    - If it is specifically related to Hazel, we add the 'HZ_' prefix: **`IFN_MACRO_NAME`**.
+    - If there is a macro for the application and for the engine, we add an additional 'CORE_' prefix to the engine macro:  **`IFN_CORE_MACRO_NAME`**.
 
 
 
@@ -66,3 +80,5 @@ If you're not sure what any of that means, check out Thinkful's [GitHub Pull Req
 [how-to-ask]: https://stackoverflow.com/help/how-to-ask
 [issue-tracker]: https://github.com/Yousazoe/Infinite/issues
 [submit-pr]: https://github.com/Yousazoe/Infinite/pulls
+[thinkful-pr-tutorial]: https://www.thinkful.com/learn/github-pull-request-tutorial/
+[github-help-closing-keywords]: https://help.github.com/en/articles/closing-issues-using-keywords
