@@ -16,6 +16,8 @@
 
 #include "Infinite/Core/Log.h"
 
+#include "Infinite/Debug/Instrumentor.h"
+
 #ifdef IFN_PLATFORM_WINDOWS
     #include <Windows.h>
 #endif
