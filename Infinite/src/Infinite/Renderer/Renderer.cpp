@@ -10,6 +10,8 @@ namespace Infinite {
 
 	void Renderer::Init()
 	{
+		IFN_PROFILE_FUNCTION();
+
 		RenderCommand::Init();
 		Renderer2D::Init();
 	}

@@ -24,11 +24,15 @@ namespace Infinite {
 
 	WindowsWindow::WindowsWindow(const WindowProps& props)
 	{
+		IFN_PROFILE_FUNCTION();
+
 		Init(props);
 	}
 
 	WindowsWindow::~WindowsWindow()
 	{
+		IFN_PROFILE_FUNCTION();
+
 		Shutdown();
 	}
 
@@ -42,13 +46,18 @@ namespace Infinite {
 
 		if (s_GLFWWindowCount == 0)
 		{
+			IFN_PROFILE_SCOPE("glfwInit");
+
 			int success = glfwInit();
 			IFN_CORE_ASSERT(success, "Could not intialize GLFW!");
             glfwSetErrorCallback(GLFWErrorCallback);
 		}
 
-		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
-		++s_GLFWWindowCount;
+		{
+			IFN_PROFILE_SCOPE("glfwCreateWindow");
+			m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
+			++s_GLFWWindowCount;
+		}
 		
 		m_Context = GraphicsContext::Create(m_Window);
 		m_Context->Init();
@@ -151,6 +160,8 @@ namespace Infinite {
 
 	void WindowsWindow::Shutdown()
 	{
+		IFN_PROFILE_FUNCTION();
+
 		glfwDestroyWindow(m_Window);
 		--s_GLFWWindowCount;
 
@@ -162,12 +173,16 @@ namespace Infinite {
 
 	void WindowsWindow::OnUpdate()
 	{
+		IFN_PROFILE_FUNCTION();
+
 		glfwPollEvents();
 		m_Context->SwapBuffers();
 	}
 
 	void WindowsWindow::SetVSync(bool enabled)
 	{
+		IFN_PROFILE_FUNCTION();
+
 		if (enabled)
 			glfwSwapInterval(1);
 		else

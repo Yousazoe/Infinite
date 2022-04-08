@@ -21,6 +21,8 @@ namespace Infinite {
 
 	void ImGuiLayer::OnAttach()
 	{
+		IFN_PROFILE_FUNCTION();
+
 		// Setup Dear ImGui context
 		IMGUI_CHECKVERSION();
 		ImGui::CreateContext();
@@ -54,6 +56,8 @@ namespace Infinite {
 
 	void ImGuiLayer::OnDetach()
 	{
+		IFN_PROFILE_FUNCTION();
+
 		ImGui_ImplOpenGL3_Shutdown();
 		ImGui_ImplGlfw_Shutdown();
 		ImGui::DestroyContext();
@@ -61,6 +65,8 @@ namespace Infinite {
 
 	void ImGuiLayer::Begin()
 	{
+		IFN_PROFILE_FUNCTION();
+
 		ImGui_ImplOpenGL3_NewFrame();
 		ImGui_ImplGlfw_NewFrame();
 		ImGui::NewFrame();
@@ -68,6 +74,8 @@ namespace Infinite {
 
 	void ImGuiLayer::End()
 	{
+		IFN_PROFILE_FUNCTION();
+
 		ImGuiIO& io = ImGui::GetIO();
 
 		Application& app = Application::Get();

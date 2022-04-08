@@ -12,12 +12,14 @@ Sandbox2D::Sandbox2D()
 
 void Sandbox2D::OnAttach()
 {
+	IFN_PROFILE_FUNCTION();
+
 	m_CheckerboardTexture = Infinite::Texture2D::Create("assets/textures/Checkerboard.png");
 }
 
 void Sandbox2D::OnDetach()
 {
-
+	IFN_PROFILE_FUNCTION();
 }
 
 
@@ -26,10 +28,7 @@ void Sandbox2D::OnUpdate(Infinite::Timestep ts)
 	IFN_PROFILE_FUNCTION();
 
 	// Update
-	{
-		IFN_PROFILE_SCOPE("CameraController::OnUpdate");
-		m_CameraController.OnUpdate(ts);
-	}
+	m_CameraController.OnUpdate(ts);
 
 	// Render
 	{

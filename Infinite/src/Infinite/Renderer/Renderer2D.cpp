@@ -20,6 +20,8 @@ namespace Infinite {
 
 	void Renderer2D::Init()
 	{
+		IFN_PROFILE_FUNCTION();
+
 		s_Data = new Renderer2DStorage();
 		s_Data->QuadVertexArray = VertexArray::Create();
 
@@ -52,6 +54,8 @@ namespace Infinite {
 
 	void Renderer2D::Shutdown()
 	{
+		IFN_PROFILE_FUNCTION();
+
 		delete s_Data;
 	}
 
@@ -63,7 +67,7 @@ namespace Infinite {
 	
 	void Renderer2D::EndScene()
 	{
-
+		IFN_PROFILE_FUNCTION();
 	}
 
 	
@@ -74,6 +78,8 @@ namespace Infinite {
 
 	void Renderer2D::DrawQuad(const glm::vec3& position, const glm::vec2& size, const glm::vec4& color)
 	{
+		IFN_PROFILE_FUNCTION();
+
 		s_Data->TextureShader->SetFloat4("u_Color", color);
 		s_Data->WhiteTexture->Bind();
 
@@ -93,6 +99,8 @@ namespace Infinite {
 
 	void Renderer2D::DrawQuad(const glm::vec3& position, const glm::vec2& size, const Ref<Texture2D>& texture)
 	{
+		IFN_PROFILE_FUNCTION();
+
 		s_Data->TextureShader->SetFloat4("u_Color", glm::vec4(1.0f));
 		texture->Bind();
 
