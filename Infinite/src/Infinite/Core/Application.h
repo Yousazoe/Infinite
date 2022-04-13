@@ -11,6 +11,8 @@
 
 #include "Infinite/ImGui/ImGuiLayer.h"
 
+int main(int argc, char** argv);
+
 namespace Infinite {
 	class Application
 	{
@@ -18,7 +20,6 @@ namespace Infinite {
 		Application();
 		virtual ~Application();
 
-		void Run();
 		void OnEvent(Event& e);
 
 		void PushLayer(Layer* layer);
@@ -28,6 +29,7 @@ namespace Infinite {
 
 		inline static Application& Get() { return *s_Instance; }
 	private:
+		void Run();
 		bool OnWindowClose(WindowCloseEvent& e);
 		bool OnWindowResize(WindowResizeEvent& e);
 
@@ -40,6 +42,8 @@ namespace Infinite {
 		float m_LastFrameTime = 0.0f;
 	private:
 		static Application* s_Instance;
+
+		friend int ::main(int argc, char** argv);
 	};
 
 	//To be define in CLIENT
