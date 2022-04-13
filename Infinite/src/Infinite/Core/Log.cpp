@@ -27,5 +27,4 @@ namespace Infinite {
 		s_ClientLogger->set_level(spdlog::level::trace);
 		s_ClientLogger->flush_on(spdlog::level::trace);
 	}
-
 }
