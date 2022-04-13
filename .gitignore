@@ -5,6 +5,9 @@ bin-int/
 .cr/
 .idea/
 
+# Infinite files
+*.log
+
 # Visual Studio files and folder
 .vs/
 **.sln
