@@ -5,12 +5,15 @@
 
 #include "ExampleLayer.h"
 
+#include "Example/Icarus/IcarusGameLayer.h"
+
 class Sandbox : public Infinite::Application {
 public:
 	Sandbox() 
 	{
 		// PushLayer(new ExampleLayer());
 		PushLayer(new Sandbox2D());
+		// PushLayer(new IcarusGameLayer());
 	}
 	~Sandbox() {}
 };
