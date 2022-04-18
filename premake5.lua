@@ -120,7 +120,9 @@ project "Sandbox"
   files
   {
     "%{prj.name}/src/**.h",
-    "%{prj.name}/src/**.cpp"
+    "%{prj.name}/src/**.cpp",
+    "%{prj.name}/src/Example/Icarus/**.h",
+    "%{prj.name}/src/Example/Icarus/**.cpp"
   }
 
   includedirs

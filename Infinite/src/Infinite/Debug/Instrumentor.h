@@ -157,7 +157,7 @@ namespace Infinite {
 	};
 }
 
-#define IFN_PROFILE 1
+#define IFN_PROFILE 0
 	#if IFN_PROFILE
 	// Resolve which function signature macro will be used. Note that this only
 	// is resolved when the (pre)compiler starts, so the syntax highlighting
