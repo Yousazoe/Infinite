@@ -27,6 +27,7 @@ You can clone the repository to a local destination using git:
 Make sure that you do a `--recursive` clone to fetch all of the submodules!
 
 ## The Plan
+
 The plan for Infinite is two-fold: to create a powerful 3D engine, but also to serve as an education tool for teaching game engine design and architecture. Because of this the development inside this repository is rather slow, since everything has to be taught and implemented on-camera.
 
 ### Main features to come:
@@ -40,3 +41,4 @@ The plan for Infinite is two-fold: to create a powerful 3D engine, but also to s
 - Procedural terrain and world generation
 - Artificial Intelligence
 - Audio system
+

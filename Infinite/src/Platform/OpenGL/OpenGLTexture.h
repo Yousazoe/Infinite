@@ -20,6 +20,11 @@ namespace Infinite {
 
 		virtual void Bind(uint32_t slot) const override;
 
+		virtual bool operator==(const Texture& other) const override
+		{
+			return m_RendererID == ((OpenGLTexture2D&)other).m_RendererID;
+		}
+
 	private:
 		std::string m_Path;
 		uint32_t m_Width, m_Height;
